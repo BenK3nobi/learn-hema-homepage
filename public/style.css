@@ -1,0 +1,85 @@
+/* Gemeinsames Stylesheet der Homepage. Farben und Schriften entsprechen kurs-fiore/website/,
+   damit Kursseite und Homepage zusammengehören. Kein Framework, keine externen Schriften. */
+:root {
+  --bg: #faf8f5;
+  --surface: #fffefc;
+  --line: #ddd6cc;
+  --text: #23262b;
+  --muted: #5f6670;
+  --accent: #7a2e26;
+  --accent-soft: #f2e6e3;
+  --on-accent: #ffffff;
+  --measure: 40rem;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #16181c;
+    --surface: #1d2026;
+    --line: #333840;
+    --text: #e9e6e1;
+    --muted: #a2a8b2;
+    --accent: #d78a7c;
+    --accent-soft: #2c2320;
+    --on-accent: #16181c;
+  }
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: ui-serif, Georgia, "Iowan Old Style", "Palatino Linotype", serif;
+  font-size: 1.0625rem;
+  line-height: 1.65;
+}
+.wrap { max-width: var(--measure); margin: 0 auto; padding: 0 1.25rem; }
+h1, h2, h3, nav, footer, .kicker, .cards a, .cta, .btn {
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* Kopf und Navigation */
+.site-header { border-bottom: 1px solid var(--line); background: var(--surface); }
+.site-header .wrap { display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; padding-top: .9rem; padding-bottom: .9rem; }
+.brand { font-weight: 700; text-decoration: none; color: var(--text); letter-spacing: .02em; }
+.brand span { color: var(--accent); }
+nav ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 1.1rem; flex-wrap: wrap; }
+nav a { text-decoration: none; color: var(--muted); font-size: .95rem; }
+nav a[aria-current="page"], nav a:hover { color: var(--accent); }
+
+/* Inhalt */
+main { padding: 2.5rem 0 3rem; }
+.kicker { font-size: .78rem; letter-spacing: .13em; text-transform: uppercase; color: var(--accent); font-weight: 600; margin: 0 0 .9rem; }
+h1 { font-size: clamp(1.9rem, 6vw, 2.6rem); line-height: 1.15; margin: 0 0 .7rem; font-weight: 600; }
+h2 { font-size: 1.25rem; font-weight: 600; margin: 2.5rem 0 .8rem; }
+h3 { font-size: 1.05rem; font-weight: 600; margin: 1.6rem 0 .4rem; }
+.lede { font-size: 1.15rem; color: var(--muted); margin: 0 0 1.5rem; }
+a { color: var(--accent); }
+p, li { max-width: 65ch; }
+hr { border: 0; border-top: 1px solid var(--line); margin: 2.5rem 0; }
+
+/* Drei Einstiege auf der Startseite */
+.cards { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr)); margin: 2rem 0; padding: 0; list-style: none; }
+.cards li { background: var(--surface); border: 1px solid var(--line); border-radius: .6rem; padding: 1.1rem 1.2rem; }
+.cards h2 { margin: 0 0 .4rem; font-size: 1.1rem; }
+.cards p { margin: 0 0 .8rem; color: var(--muted); font-size: .98rem; }
+.cards a { font-weight: 600; text-decoration: none; }
+
+/* Buttons */
+.btn { display: inline-block; background: var(--accent); color: var(--on-accent); padding: .6rem 1.1rem; border-radius: .45rem; text-decoration: none; font-weight: 600; }
+.btn:hover { filter: brightness(1.08); }
+.btn.secondary { background: var(--accent-soft); color: var(--accent); }
+
+/* Hinweiskästen */
+.note { background: var(--accent-soft); border-left: 3px solid var(--accent); padding: .8rem 1rem; border-radius: 0 .4rem .4rem 0; margin: 1.5rem 0; }
+.todo { background: #fff3cd; color: #5c4400; border: 1px dashed #c9a227; padding: .6rem .9rem; border-radius: .4rem; font-family: ui-monospace, monospace; font-size: .9rem; }
+@media (prefers-color-scheme: dark) { .todo { background: #3a3014; color: #f1d98a; } }
+
+/* Fuß */
+.site-footer { border-top: 1px solid var(--line); padding: 1.5rem 0 2.5rem; color: var(--muted); font-size: .9rem; }
+.site-footer ul { list-style: none; padding: 0; margin: .5rem 0 0; display: flex; gap: 1.1rem; flex-wrap: wrap; }
+.site-footer a { color: var(--muted); }
+
+/* Rechtstexte */
+.legal h2 { font-size: 1.1rem; margin-top: 2rem; }
+.legal address { font-style: normal; }

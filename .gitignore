@@ -1,0 +1,10 @@
+# Große Design-Quelldateien (siehe designs/README.md)
+*.psd
+*.afdesign
+*.ai
+*.xcf
+
+# System
+.DS_Store
+Thumbs.db
+*.swp
