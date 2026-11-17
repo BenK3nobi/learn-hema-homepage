@@ -1,6 +1,6 @@
 # hema-homepage
 
-Statische Homepage des HEMA-Projekts. Details in `CLAUDE.md`, Todos in `TODO.md`.
+Statische Homepage von Learn HEMA (learn-hema.de). Reines HTML/CSS in `public/`, ausgeliefert von Caddy.
 
 Lokal ansehen:
 

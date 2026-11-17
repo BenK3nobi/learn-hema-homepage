@@ -8,3 +8,7 @@
 .DS_Store
 Thumbs.db
 *.swp
+
+# Arbeitsnotizen (Planung, Gewerbe/Steuer) – bleiben lokal, nicht im öffentlichen Repo
+TODO.md
+CLAUDE.md
